@@ -1,0 +1,10 @@
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Abstract}{i}{}%
+\contentsline {chapter}{Acknowledgement}{i}{}%
+\contentsline {chapter}{R\'esum\'e}{i}{}%
+\babel@toc {french}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\chapternumberline {0}Introduction}{1}{}%
+\contentsline {chapter}{Bibliography}{3}{}%
