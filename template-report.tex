@@ -11,6 +11,7 @@
 
 %===================================== packages
 \usepackage{lipsum}
+\usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{amsmath}
 % \usepackage{fullpage}
@@ -26,6 +27,7 @@
 % \usepackage{pgfplots}
 \usepackage{url}
 \usepackage{footnote}
+\usepackage{mathtools}
 %============================================
 \usetikzlibrary{arrows,shapes,positioning,shadows,trees}
 \makesavenoteenv{tabular}
@@ -45,6 +47,9 @@
 \renewcommand{\chaptitlefont}{ \sffamily\bfseries \LARGE}
 \renewcommand{\chapnumfont}{ \sffamily\bfseries \LARGE}
 \setsecnumdepth{subsection}
+
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
 
 
 % Title page formatting -- do not change!
@@ -124,7 +129,14 @@ Your abstract in French goes here...
 \selectlanguage{English}
 
 
-\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+
 
 
 
@@ -146,8 +158,8 @@ Your abstract in French goes here...
 %=========================================================
 \backmatter
 
-\bibliographystyle{plain} % plain-fr si rapport en français 
-\bibliography{bibfile.bib}
+% \bibliographystyle{plain} % plain-fr si rapport en français 
+% \bibliography{bibfile.bib}
 
 %\cleardoublepage % Goes to an odd page
 %\pagestyle{empty} % no page number

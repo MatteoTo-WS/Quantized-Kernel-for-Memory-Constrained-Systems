@@ -7,4 +7,6 @@
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\chapternumberline {0}Introduction}{1}{}%
-\contentsline {chapter}{Bibliography}{3}{}%
+\contentsline {section}{\numberline {0.1}Machine Learning}{1}{}%
+\contentsline {section}{\numberline {0.2}Kernel Methods}{4}{}%
+\contentsline {subsection}{\numberline {0.2.1}Translation Invariant Kernels}{6}{}%

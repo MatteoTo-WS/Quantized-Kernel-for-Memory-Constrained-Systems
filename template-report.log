@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.25)  21 APR 2026 13:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.25)  22 APR 2026 12:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -442,7 +442,15 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count347
 \l__lipsum_a_int=\count348
 \l__lipsum_b_int=\count349
- (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+ (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks27
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
@@ -466,7 +474,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2024/11/17 v2.01 AMS text
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks27
+\@emptytoks=\toks28
 \ex@=\dimen269
 )) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -504,21 +512,21 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \dotsspace@=\muskip17
 \c@parentequation=\count357
 \dspbrk@lvl=\count358
-\tag@help=\toks28
+\tag@help=\toks29
 \row@=\count359
 \column@=\count360
 \maxfields@=\count361
-\andhelp@=\toks29
+\andhelp@=\toks30
 \eqnshift@=\dimen272
 \alignsep@=\dimen273
 \tagshift@=\dimen274
 \tagwidth@=\dimen275
 \totwidth@=\dimen276
 \lineht@=\dimen277
-\@envbody=\toks30
+\@envbody=\toks31
 \multlinegap=\skip192
 \multlinetaggap=\skip193
-\mathdisplay@stack=\toks31
+\mathdisplay@stack=\toks32
 LaTeX Info: Redefining \[ on input line 2949.
 LaTeX Info: Redefining \] on input line 2950.
 ) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\mathptmx.sty
@@ -543,8 +551,8 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
-\symbold=\mathgroup4
-\symitalic=\mathgroup5
+\symbold=\mathgroup6
+\symitalic=\mathgroup7
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
@@ -566,7 +574,7 @@ LaTeX Font Info:    Trying to load font information for T1+ptm on input line 116
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
-\pgfutil@everybye=\toks32
+\pgfutil@everybye=\toks33
 \pgfutil@tempdima=\dimen278
 \pgfutil@tempdimb=\dimen279
 ) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
@@ -578,10 +586,10 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks33
-\pgfkeys@temptoks=\toks34
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks35
+\pgfkeys@tmptoks=\toks36
 ))
 \pgf@x=\dimen280
 \pgf@y=\dimen281
@@ -599,9 +607,9 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \c@pgf@countb=\count363
 \c@pgf@countc=\count364
 \c@pgf@countd=\count365
-\t@pgf@toka=\toks36
-\t@pgf@tokb=\toks37
-\t@pgf@tokc=\toks38
+\t@pgf@toka=\toks37
+\t@pgf@tokb=\toks38
+\t@pgf@tokc=\toks39
 \pgf@sys@id@count=\count366
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
@@ -639,9 +647,9 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 \pgfmath@dimen=\dimen290
 \pgfmath@count=\count369
 \pgfmath@box=\box61
-\pgfmath@toks=\toks39
-\pgfmath@stack@operand=\toks40
-\pgfmath@stack@operation=\toks41
+\pgfmath@toks=\toks40
+\pgfmath@stack@operand=\toks41
+\pgfmath@stack@operation=\toks42
 ) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count370
 )) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
@@ -724,8 +732,8 @@ Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen317
 \pgffor@skip=\dimen318
-\pgffor@stack=\toks42
-\pgffor@toks=\toks43
+\pgffor@stack=\toks43
+\pgffor@toks=\toks44
 )) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
@@ -773,11 +781,39 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box71
 \fn@width=\dimen329
+) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+ (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count384
+\calc@Bcount=\count385
+\calc@Adimen=\dimen330
+\calc@Bdimen=\dimen331
+\calc@Askip=\skip196
+\calc@Bskip=\skip197
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count386
+\calc@Cskip=\skip198
+) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count387
+\l_MT_multwidth_dim=\dimen332
+\origjot=\skip199
+\l_MT_shortvdotswithinadjustabove_dim=\dimen333
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen334
+\l_MT_above_intertext_sep=\dimen335
+\l_MT_below_intertext_sep=\dimen336
+\l_MT_above_shortintertext_sep=\dimen337
+\l_MT_below_shortintertext_sep=\dimen338
+\xmathstrut@box=\box72
+\xmathstrut@dim=\dimen339
 ) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen330
+\arrowsize=\dimen340
 )) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.geometric.code.tex
@@ -800,26 +836,26 @@ File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box72
-\pgfnodeparttwobox=\box73
-\pgfnodepartthreebox=\box74
-\pgfnodepartfourbox=\box75
-\pgfnodeparttwentybox=\box76
-\pgfnodepartnineteenbox=\box77
-\pgfnodeparteighteenbox=\box78
-\pgfnodepartseventeenbox=\box79
-\pgfnodepartsixteenbox=\box80
-\pgfnodepartfifteenbox=\box81
-\pgfnodepartfourteenbox=\box82
-\pgfnodepartthirteenbox=\box83
-\pgfnodeparttwelvebox=\box84
-\pgfnodepartelevenbox=\box85
-\pgfnodeparttenbox=\box86
-\pgfnodepartninebox=\box87
-\pgfnodeparteightbox=\box88
-\pgfnodepartsevenbox=\box89
-\pgfnodepartsixbox=\box90
-\pgfnodepartfivebox=\box91
+\pgfnodepartlowerbox=\box73
+\pgfnodeparttwobox=\box74
+\pgfnodepartthreebox=\box75
+\pgfnodepartfourbox=\box76
+\pgfnodeparttwentybox=\box77
+\pgfnodepartnineteenbox=\box78
+\pgfnodeparteighteenbox=\box79
+\pgfnodepartseventeenbox=\box80
+\pgfnodepartsixteenbox=\box81
+\pgfnodepartfifteenbox=\box82
+\pgfnodepartfourteenbox=\box83
+\pgfnodepartthirteenbox=\box84
+\pgfnodeparttwelvebox=\box85
+\pgfnodepartelevenbox=\box86
+\pgfnodeparttenbox=\box87
+\pgfnodepartninebox=\box88
+\pgfnodeparteightbox=\box89
+\pgfnodepartsevenbox=\box90
+\pgfnodepartsixbox=\box91
+\pgfnodepartfivebox=\box92
 ))) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshadows.code.tex
@@ -833,24 +869,25 @@ File: tikzlibrarytrees.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (template-report.aux
 Package babel Info: 'french' activates 'french' shorthands.
 (babel)             Reported on input line 14.
- (chapters/0_preliminaries.aux) (chapters/2_Chapter2.aux) (chapters/6_Conclusion.aux) (chapters/7_Appendix.aux))
+ (chapters/0_preliminaries.aux) (chapters/2_Chapter2.aux) (chapters/6_Conclusion.aux)
+(chapters/7_Appendix.aux))
 \openout1 = `template-report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Info: Redefining \degres on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Info: Redefining \degres on input line 101.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -888,17 +925,17 @@ LaTeX Info: Redefining \degres on input line 96.
 
 (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count384
-\scratchdimen=\dimen331
-\scratchbox=\box92
-\nofMPsegments=\count385
-\nofMParguments=\count386
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count387
-\MPscratchDim=\dimen332
-\MPnumerator=\count388
-\makeMPintoPDFobject=\count389
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count388
+\scratchdimen=\dimen341
+\scratchbox=\box93
+\nofMPsegments=\count389
+\nofMParguments=\count390
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count391
+\MPscratchDim=\dimen342
+\MPnumerator=\count392
+\makeMPintoPDFobject=\count393
+\everyMPtoPDFconversion=\toks46
 ) (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -908,14 +945,14 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 <pics/logo_IM2AG.jpeg, id=28, 1030.85126pt x 515.9275pt>
 File: pics/logo_IM2AG.jpeg Graphic file (type jpg)
 <use pics/logo_IM2AG.jpeg>
-Package pdftex.def Info: pics/logo_IM2AG.jpeg  used on input line 100.
+Package pdftex.def Info: pics/logo_IM2AG.jpeg  used on input line 105.
 (pdftex.def)             Requested size: 64.7269pt x 32.39996pt.
 <pics/logo_Ensimag.jpeg, id=29, 250.0542pt x 79.0152pt>
 File: pics/logo_Ensimag.jpeg Graphic file (type jpg)
 <use pics/logo_Ensimag.jpeg>
-Package pdftex.def Info: pics/logo_Ensimag.jpeg  used on input line 100.
+Package pdftex.def Info: pics/logo_Ensimag.jpeg  used on input line 105.
 (pdftex.def)             Requested size: 102.53813pt x 32.39996pt.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 100.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 105.
  (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
@@ -928,7 +965,7 @@ File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 [2
 
 ]
-\c@theorem=\count390
+\c@theorem=\count394
 
 
 [1]
@@ -973,12 +1010,39 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
  (chapters/0_preliminaries.tex
 Chapter 0.
-)
+<pics/0-data_overfitting.png, id=53, 619.3539pt x 383.031pt>
+File: pics/0-data_overfitting.png Graphic file (type png)
+<use pics/0-data_overfitting.png>
+Package pdftex.def Info: pics/0-data_overfitting.png  used on input line 22.
+(pdftex.def)             Requested size: 334.60422pt x 206.93301pt.
+
 
 [1
 
 
 ]
+
+[2 <./pics/0-data_overfitting.png>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+
+
+[3]
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
+
+ []
+
+
+
+[5])
+
+[6]
 \openout2 = `./chapters/2_Chapter2.aux'.
 
 
@@ -989,52 +1053,27 @@ No file ./chapters/6_Conclusion.tex.
 \openout2 = `./chapters/7_Appendix.aux'.
 
 No file ./chapters/7_Appendix.tex.
-
-
-[2
-
-
-
-
-
-
-
-
-
-
-
-
-] (template-report.bbl
-bibitemlist
-
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-)
-
-[3
-
-]
 \tf@toc=\write5
 \openout5 = `template-report.toc'.
 
- (template-report.aux (chapters/0_preliminaries.aux) (chapters/2_Chapter2.aux) (chapters/6_Conclusion.aux) (chapters/7_Appendix.aux))
+(template-report.aux (chapters/0_preliminaries.aux) (chapters/2_Chapter2.aux) (chapters/6_Conclusion.aux) (chapters/7_Appendix.aux))
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23443 strings out of 468134
- 479150 string characters out of 5430740
- 998129 words of memory out of 5000000
- 51591 multiletter control sequences out of 15000+600000
- 664990 words of font info for 80 fonts, out of 8000000 for 9000
+ 24257 strings out of 468134
+ 493282 string characters out of 5430740
+ 1019914 words of memory out of 5000000
+ 52361 multiletter control sequences out of 15000+600000
+ 707865 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,11n,93p,634b,385s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on template-report.pdf (9 pages, 1104401 bytes).
+ 85i,12n,93p,634b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on template-report.pdf (12 pages, 1249050 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
+ 139 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
