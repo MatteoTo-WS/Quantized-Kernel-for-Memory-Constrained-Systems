@@ -196,17 +196,29 @@
       but in general we have: $\innerprod{cos(\omega^t x)}{cos(\omega^t y)}_\R \neq cos(\omega^t (x-y))$, and so the corresponding approximated kernel is not
       shift-invariant and it doesn't converges, in expectation, to the original kernel function $k(x-y)$ for $M \to +\infty$; a common way to tackle this issue is to consider:
       $$
-          z_{cos}(x) = \sqrt{\frac{2}{M}}cos(\omega^T x + \xi), \quad \xi \sim \text{Unif}[0, 2\pi],
+          z_{cos}(x) = \sqrt{\frac{2}{M}}cos(\omega^T x + \xi), \quad \xi \sim \mathcal{U}[0, 2\pi],
       $$
       in such a way:
       \begin{align*}
-           & \E(\innerprod{z_k(x)}{z_k(y)})  = \frac{2}{M}\E (cos(\omega^T x + \xi)cos(\omega^T y + \xi ))
-          \\ & = \frac{2}{M}\E(cos(\omega^T x)cos(\omega^T y)-cos(\omega^Tx)cos(\xi)-cos(\omega^T y)cos(\xi)+cos^2(\xi)) \\
-           & =
+          \E(\innerprod{z_k(x)}{z_k(y)}) & = \frac{2}{M}\E (cos(\omega^T x + \xi)cos(\omega^T y + \xi ))
+          \\
+                                         & = \frac{2}{M}\E\left(\frac{1}{2}cos(\omega^T(x-y))+\frac{1}{2}cos(\omega^T(x+y)+2\xi)\right) \\
+                                         & = \frac{1}{M}\E(cos(\omega^T(x-y))) = k(x,y)
       \end{align*}
-      where we average over $\xi$ uniformely distributed in $[0, 2\pi]$ and $\Omega \sim \Lambda^m$ , 
+      where we average over $\xi \sim \mathcal{U}[0, 2\pi]$ and $\omega \sim \Lambda$.
+      \vspace{5pt}
+      \newline As previously stated, our focus will be reducing the ammount of memory needed to store the feature map used in learning algorithms.
+      To do so, instead of storing the full precision feature map $z(x) \in \R^M$, we can store a quantized version of it, $z_q(x) \in \R^M$, which uses 
+      less numerical bits. We use the following procedure: 
+      \begin{enumerate}
+        \item given $M$ and $b$, we split the interval $[-\frac{1}{\sqrt{M}}, \frac{1}{\sqrt{M}}]$ in $2^b-1$ equal intervals. 
+        \item for each coordinate $j \in \{1, \dots, M\}$, and each $x \in \R^d$, we quantize the coordinate $z_j(x)$ by taking the closest extreme point of the 
+         belonging interval or by a stochastic quantization procedure depending on the value of $z_j(x)$ in the relative interval.  
+      \end{enumerate}
 
       
+
+
   \end{subsection}
  \end{section}
 
