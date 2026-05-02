@@ -102,7 +102,7 @@ Jury member 2\\
 \selectlanguage{English} % french si rapport en français
 \frontmatter
 \begin{titlingpage}
-\maketitle
+    \maketitle
 \end{titlingpage}
 
 %\small
@@ -110,21 +110,21 @@ Jury member 2\\
 
 \renewcommand{\abstracttextfont}{\normalfont}
 \abstractintoc
-\begin{abstract} 
-Your abstract goes here... 
+\begin{abstract}
+    Your abstract goes here...
 \end{abstract}
 \abstractintoc
 
 \renewcommand\abstractname{Acknowledgement}
 \begin{abstract}
-I would like to express my sincere gratitude to .. for his invaluable assistance and comments in reviewing this report... 
-Good luck :) 
+    I would like to express my sincere gratitude to .. for his invaluable assistance and comments in reviewing this report...
+    Good luck :)
 \end{abstract}
 
 
 \renewcommand\abstractname{R\'esum\'e}
 \begin{abstract} \selectlanguage{French}
-Your abstract in French goes here... 
+    Your abstract in French goes here...
 \end{abstract}
 \selectlanguage{English}
 
@@ -135,7 +135,9 @@ Your abstract in French goes here...
 \newtheorem{lemma}[theorem]{Lemma}
 
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\E}{\mathbb{E}}
+\newcommand{\innerprod}[2]{\langle #1, #2 \rangle}
 
 
 

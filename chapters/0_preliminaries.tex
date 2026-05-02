@@ -135,11 +135,11 @@
       f_\theta: \mathcal{X}\rightarrow \R, \quad x \to \langle \theta, \phi(x) \rangle_{\mathcal{H}}
   $$
   where $\theta \in \mathcal{H}$ is the parameter vector. Note that the function is not linear on the data $x$ itself, but
-  on their representation in the feature space $\mathcal{H}$. Furthermore we assume the loss function to be of the form: 
+  on their representation in the feature space $\mathcal{H}$. Furthermore we assume the loss function to be of the form:
   $$
-    L(f_\theta, (x_i, y_i)_{i=1,\dots,n}) = \frac{1}{n}\sum_{i=1}^n l(f_\theta(x_i), y_i) + \lambda ||\theta||^2
+      L(f_\theta, (x_i, y_i)_{i=1,\dots,n}) = \frac{1}{n}\sum_{i=1}^n l(f_\theta(x_i), y_i) + \lambda ||\theta||^2
   $$
-  where $l$ is a loss function and $\lambda \geq 0$ is the regularization parameter. 
+  where $l$ is a loss function and $\lambda \geq 0$ is the regularization parameter.
   Now we can state the following theorem, which allows us to restrict the optimal parameters space.
 
   \begin{theorem}
@@ -156,12 +156,57 @@
       $$
       with $\alpha \in \R^n$.
   \end{theorem}
-  It comes straightforward that the loss function we defined above satisfies the hypothesis of the theorem, hence 
+  It comes straightforward that the loss function we defined above satisfies the hypothesis of the theorem, hence
   we can restrict our search space of optimal parameters to the space spanned by the feature map of the training data.
   \vspace{5pt}
-  \newline 
+  \newline
   \begin{subsection}{Translation Invariant Kernels}
-    We now focus on a translation invariant kernels, which will be the starting point of this work.
+      We now focus on a translation invariant kernels, which will be the starting point of this work.
+      \begin{definition}
+          A kernel map $k$ is called translation invariant if it satisfies the following property:
+          $$k(x,y) = k^{\Delta }(x-y)$$
+          for all $x, y \in \mathcal{X}$, where $\Delta$ is the Laplace-Beltrami operator on the input space $\mathcal{X}$ and $k^{\Delta}$ denotes the application of the operator to the function $k$.
+      \end{definition}
+      Translation invariant kernels are particularly interesting since the following theorem, due to Bochner, holds:
+
+      \begin{theorem}
+          A kernel map $k$ is called translation invariant if and only if it is a Fourier transform of a positive finite measure on $\R^d$, i.e.
+          $$k(x, y) = k^\Delta(x-y) = \int_{\R^d} e^{i \omega^T (x-y)} \, d \Lambda(\omega)$$
+          for some positive finite measure $\Lambda$ on $\R^d$.
+      \end{theorem}
+
+      Now, if we assume the kernel to be normalized, i.e. $k(0)=1$, then we can rewrite the condition above as:
+      $$k^\Delta(u) = \E_{\omega \sim \Lambda}[e^{i \omega^T u}];$$
+      hence exploiting the law of large numbers, we can approximate the kernel function with a finite sum:
+      $$k^\Delta (x-y) \approx \frac{1}{M}\sum_{j=1}^M e^{i \omega_j^T (x-y)} = \innerprod{\frac{1}{\sqrt{M}}e^{i \Omega^T x}}{\frac{1}{\sqrt{M}}e^{i \Omega^T y}}_\C, \quad \Omega = (\omega_1, \dots, \omega_M) \in \R^{d\times M} $$
+      hence we can define:
+      \begin{definition}
+          Let $k$ be a normalized translation invariant kernel. We define the Random Fourier feature map as:
+          $$z_{RFF}(x) = \frac{1}{\sqrt{M}}e^{i \Omega^T x}, \quad x \in \R^d$$
+          with $\Omega = (\omega_1, \dots, \omega_M) \in \R^{d\times M}$ where each $\omega_j$ is drawn from $\Lambda$, the probability distribution on $\R^d$ associated with the kernel $k$.
+          The corresponding kernel function is:
+          $$
+              k_{RFF}(x,y) = \langle z_{RFF}(x), z_{RFF}(y) \rangle_{\C} = \frac{1}{M}e^{i \Omega^T (x-y)}
+          $$
+          which is shift invariant and converges, in expectation, to the original kernel function $k(x-y)$ for $M \to +\infty$.
+
+      \end{definition}
+      Since we weal deal only with real kernels, we consider only the real part of the Fourier function:
+      $$\Re(e^{i \omega^T x}) = \cos(\omega^T x),$$
+      but in general we have: $\innerprod{cos(\omega^t x)}{cos(\omega^t y)}_\R \neq cos(\omega^t (x-y))$, and so the corresponding approximated kernel is not
+      shift-invariant and it doesn't converges, in expectation, to the original kernel function $k(x-y)$ for $M \to +\infty$; a common way to tackle this issue is to consider:
+      $$
+          z_{cos}(x) = \sqrt{\frac{2}{M}}cos(\omega^T x + \xi), \quad \xi \sim \text{Unif}[0, 2\pi],
+      $$
+      in such a way:
+      \begin{align*}
+           & \E(\innerprod{z_k(x)}{z_k(y)})  = \frac{2}{M}\E (cos(\omega^T x + \xi)cos(\omega^T y + \xi ))
+          \\ & = \frac{2}{M}\E(cos(\omega^T x)cos(\omega^T y)-cos(\omega^Tx)cos(\xi)-cos(\omega^T y)cos(\xi)+cos^2(\xi)) \\
+           & =
+      \end{align*}
+      where we average over $\xi$ uniformely distributed in $[0, 2\pi]$ and $\Omega \sim \Lambda^m$ , 
+
+      
   \end{subsection}
  \end{section}
 
