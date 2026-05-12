@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.25)  11 MAY 2026 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.25)  12 MAY 2026 11:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -869,8 +869,11 @@ File: tikzlibrarytrees.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (template-report.aux
 Package babel Info: 'french' activates 'french' shorthands.
 (babel)             Reported on input line 14.
- (chapters/0_preliminaries.aux) (chapters/3_experiments.aux) (chapters/6_Conclusion.aux)
-(chapters/7_Appendix.aux))
+ (chapters/0_preliminaries.aux) (chapters/3_experiments.aux
+
+LaTeX Warning: Label `fig:matern_kernel_comparison' multiply defined.
+
+) (chapters/6_Conclusion.aux) (chapters/7_Appendix.aux))
 \openout1 = `template-report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
@@ -1056,19 +1059,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--163
 
 ]
 Chapter 1.
-<pics/comparison_diff_approx_gaussian.png, id=91, 1178.001pt x 677.1699pt>
+<pics/comparison_diff_approx_gaussian.png, id=91, 1182.3372pt x 682.2288pt>
 File: pics/comparison_diff_approx_gaussian.png Graphic file (type png)
 <use pics/comparison_diff_approx_gaussian.png>
 Package pdftex.def Info: pics/comparison_diff_approx_gaussian.png  used on input line 20.
-(pdftex.def)             Requested size: 418.25368pt x 240.43317pt.
+(pdftex.def)             Requested size: 418.25368pt x 241.33409pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<pics/comparison_diff_approx_matern.png, id=92, 1183.0599pt x 677.1699pt>
+<pics/comparison_diff_approx_matern.png, id=92, 1178.7237pt x 682.2288pt>
 File: pics/comparison_diff_approx_matern.png Graphic file (type png)
 <use pics/comparison_diff_approx_matern.png>
 Package pdftex.def Info: pics/comparison_diff_approx_matern.png  used on input line 30.
-(pdftex.def)             Requested size: 418.25368pt x 239.39989pt.
+(pdftex.def)             Requested size: 418.25368pt x 242.0732pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<pics/Gaussian_Kernel_htm_comparison.png, id=93, 1264.725pt x 498.663pt>
+File: pics/Gaussian_Kernel_htm_comparison.png Graphic file (type png)
+<use pics/Gaussian_Kernel_htm_comparison.png>
+Package pdftex.def Info: pics/Gaussian_Kernel_htm_comparison.png  used on input line 38.
+(pdftex.def)             Requested size: 418.25368pt x 164.9093pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<pics/Matern_Kernel_htm_comparison.png, id=94, 1264.725pt x 498.663pt>
+File: pics/Matern_Kernel_htm_comparison.png Graphic file (type png)
+<use pics/Matern_Kernel_htm_comparison.png>
+Package pdftex.def Info: pics/Matern_Kernel_htm_comparison.png  used on input line 45.
+(pdftex.def)             Requested size: 418.25368pt x 164.9093pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1079,11 +1098,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Text page 10 contains only floats.
 
 
-Overfull \vbox (1.70982pt too high) has occurred while \output is active []
+Overfull \vbox (5.28406pt too high) has occurred while \output is active []
 
 
 
 [10 <./pics/comparison_diff_approx_gaussian.png> <./pics/comparison_diff_approx_matern.png>]
+
+[11 <./pics/Gaussian_Kernel_htm_comparison.png> <./pics/Matern_Kernel_htm_comparison.png>]
 \openout2 = `./chapters/6_Conclusion.aux'.
 
 
@@ -1091,27 +1112,44 @@ No file ./chapters/6_Conclusion.tex.
 \openout2 = `./chapters/7_Appendix.aux'.
 
 No file ./chapters/7_Appendix.tex.
+
+
+[12
+
+
+
+
+
+
+
+
+
+]
 \tf@toc=\write5
 \openout5 = `template-report.toc'.
 
-(template-report.aux (chapters/0_preliminaries.aux) (chapters/3_experiments.aux) (chapters/6_Conclusion.aux) (chapters/7_Appendix.aux))
+ (template-report.aux (chapters/0_preliminaries.aux) (chapters/3_experiments.aux) (chapters/6_Conclusion.aux) (chapters/7_Appendix.aux))
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 24279 strings out of 468134
- 494303 string characters out of 5430740
- 1020204 words of memory out of 5000000
- 52381 multiletter control sequences out of 15000+600000
+ 24294 strings out of 468134
+ 494967 string characters out of 5430740
+ 1020383 words of memory out of 5000000
+ 52396 multiletter control sequences out of 15000+600000
  707865 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,12n,93p,634b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on template-report.pdf (16 pages, 1772663 bytes).
+Output written on template-report.pdf (18 pages, 2076522 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
+ 166 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 
