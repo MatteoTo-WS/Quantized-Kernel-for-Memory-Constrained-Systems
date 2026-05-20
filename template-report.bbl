@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}
+
+\bibitem{LowPrecisionRFF}
+Jian Zhang, Avner May, Tri Dao, and Christopher R{\'{e}}.
+\newblock Low-precision random fourier features for memory-constrained kernel
+  approximation.
+\newblock In {\em International Conference on Artificial Intelligence and
+  Statistics (AISTATS)}, pages 3060--3068, 2019.
+
+\end{thebibliography}

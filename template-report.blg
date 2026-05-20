@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: template-report.aux
+Reallocating 'name_of_file' (item size: 1) to 31 items.
+A level-1 auxiliary file: ./chapters/0_preliminaries.aux
+Reallocating 'name_of_file' (item size: 1) to 29 items.
+A level-1 auxiliary file: ./chapters/3_experiments.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: ./chapters/4_stuff.aux
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+A level-1 auxiliary file: ./chapters/7_Appendix.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+Database file #1: bibfile.bib
+You've used 1 entry,
+            2118 wiz_defined-function locations,
+            508 strings with 4385 characters,
+and the built_in function-call counts, 571 in all, are:
+= -- 56
+> -- 23
+< -- 1
++ -- 9
+- -- 8
+* -- 37
+:= -- 85
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 7
+chr.to.int$ -- 0
+cite$ -- 1
+duplicate$ -- 25
+empty$ -- 45
+format.name$ -- 8
+if$ -- 127
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 10
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 23
+stack$ -- 0
+substring$ -- 45
+swap$ -- 13
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 0
+while$ -- 5
+width$ -- 2
+write$ -- 13

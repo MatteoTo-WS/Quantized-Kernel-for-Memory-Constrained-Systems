@@ -1,0 +1,27 @@
+\begin{chapter}{Main}
+ We start by setting the notation we will be using in this work.
+ Let $x \in \mathcal{X} \subset \R^d $. As stochastic feature map we consider:
+ $$
+     \left\{-\sqrt{\frac{2}{M}}, \sqrt{\frac{2}{M}}\right\}^M \ni \phi_M(x) = \sqrt{\frac{2}{M}}(\cos(\Omega^T x + \xi) + N), \quad \Omega \sim \Lambda^M, \xi \sim Unif[0, 2\pi]^M
+ $$
+ where the noise term $N$ is a $M$-dimensional random vector with entries such that $N_j$ conditioned on $\omega_j, \xi_j, x$ are independent and:
+ $$
+     \mathbb{P}\left(N_j + \cos(\omega_j^T x + \xi_j) = 1\bigg| \omega_j, \xi_j, x \right) = \frac{1+\cos(\omega_j^T x + \xi_j)}{2}
+ $$
+ $$
+     \mathbb{P}\left(N_j + \cos(\omega_j^T x + \xi_j) = -1\bigg| \omega_j, \xi_j, x \right) = \frac{1-\cos(\omega_j^T x + \xi_j)}{2}
+ $$
+ this allows us to use less memory to store the approximated RFFs representation, indeed it is enough to use 1 bit for each dimension $M$.
+ \newline From Lemma 3 in \cite{LowPrecisionRFF} we have:
+ $$
+     \E_{\substack{N, \Omega, \xi}}(\phi_M(x)^T\phi_M(y)) = k(x,y) + C\delta_x^y, \quad C \in [0,4]
+ $$
+
+ \noindent Our goal is to give a bound on the learning speed, w.r.t. the square error, for the linear function (in the feature space) $f(x) = \innerprod{\phi(x)}{w_T}$ learned through minibatched SGD algorithm:
+ $$
+     \hat{w}_0 = 0, \quad \hat{w}_{t+1} = \hat{w}_t -\gamma_t \frac{1}{b} \sum_{i=(b-1)t+1}^{bt} (\innerprod{\phi_M(x_i)}{\hat{w}_t} - y_i) \phi_M(x_i), \quad t \in [T]
+ $$
+
+
+
+\end{chapter}

@@ -11,3 +11,5 @@
 \contentsline {section}{\numberline {0.2}Kernel Methods}{4}{}%
 \contentsline {subsection}{\numberline {0.2.1}Translation Invariant Kernels}{6}{}%
 \contentsline {chapter}{\chapternumberline {1}Experiments}{9}{}%
+\contentsline {chapter}{\chapternumberline {2}Main}{13}{}%
+\contentsline {chapter}{Bibliography}{15}{}%
