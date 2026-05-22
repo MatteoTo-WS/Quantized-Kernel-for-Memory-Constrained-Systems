@@ -6,14 +6,14 @@
  $$
  where the noise term $\eta$ is a $M$-dimensional random vector with entries such that $\eta_j$ conditioned on $\omega_j, \xi_j, x$ are independent and:
  $$
-     \mathbb{P}\left(\bar{\eta_j} + \cos(\omega_j^T x + \xi_j) = 1\bigg| \omega_j, \xi_j, x \right) = \frac{1+\cos(\omega_j^T x + \xi_j)}{2}
+     \mathbb{P}\left(\bar{\eta}_j + \cos(\omega_j^T x + \xi_j) = 1\bigg| \omega_j, \xi_j, x \right) = \frac{1+\cos(\omega_j^T x + \xi_j)}{2}
  $$
  $$
-     \mathbb{P}\left(\bar{\eta_j} + \cos(\omega_j^T x + \xi_j) = -1\bigg| \omega_j, \xi_j, x \right) = \frac{1-\cos(\omega_j^T x + \xi_j)}{2}
+     \mathbb{P}\left(\bar{\eta}_j + \cos(\omega_j^T x + \xi_j) = -1\bigg| \omega_j, \xi_j, x \right) = \frac{1-\cos(\omega_j^T x + \xi_j)}{2}
  $$
  Note:
  $$
-     \E_{\eta}\left[\bar{\eta_j} + \cos(\omega_j^T x + \xi_j)|\omega_j, \xi_j, x\right] = \cos(\omega^T_j x+\xi_j)
+     \E_{\eta}\left[\bar{\eta}_j + \cos(\omega_j^T x + \xi_j)|\omega_j, \xi_j, x\right] = \cos(\omega^T_j x+\xi_j)
  $$
  this allows us to use less memory to store the approximated RFFs representation, indeed it is enough to use 1 bit for each dimension $M$. \\
  We define some operators: \\
@@ -31,14 +31,19 @@
  \begin{align*}
       & L_M:      &  & L^2(\mathcal{X})  \to L^2(\mathcal{X})                                                                                                                    \\
       & L_M(f)(x) &  & =\innerprod{\innerprod{f}{\phi_M}_{L^2(\mathcal{X})}}{\phi_M(x)}_{\R^M} = \int_{\mathcal{X}}f(x')\innerprod{\phi_M(x')}{\phi_M(x)}d\rho_{\mathcal{X}}(x') \\
-      & \qquad    &  & = \int_{\mathcal{X}}k_M(x, x')f(x') d\rho_{\mathcal{X}}(x')                                                                                               \\
+      & \qquad    &  & = \int_{\mathcal{X}}k_M(x, x')f(x') d\rho_{\mathcal{X}}(x')
  \end{align*}
  and its adjoint, the covariance operator:
  \begin{align*}
       & C_M: \R^M \to \R^M                                                                                                                                              \\
       & C_M(w) = \innerprod{\innerprod{w}{\phi_M(\cdot)}_{\R^M}}{\phi_M}_{L^2(\mathcal{X})} = \int_{\mathcal{X}}\innerprod{w}{\phi_M(x)}\phi_M(x)d\rho_{\mathcal{X}}(x)
  \end{align*}
- We will denote the stochastic operators, i.e. the ones using $\tilde{\phi}_M$, by: $\tilde{S}_M, \tilde{S}_M^\star, \tilde{L}_M \text{ and } \tilde{C}_M$.
+ In the learning procedure we will also consider the empirical versions of these operators, defined as follows:
+ \begin{align*}
+      & \hat{S}_M: \R^M \to \R^n, \quad \hat{S}_M^T(w) = \frac{1}{\sqrt{n}}(\phi_M(x_1), \dots, \phi_M(x_n)) \\
+      & \hat{L}_M \coloneqq \hat{S}_M \hat{S}_M^T, \; \hat{C}_M \coloneqq \hat{S}_M^T \hat{S}_M
+ \end{align*}
+ We will denote the stochastic operators, i.e. the ones using $\tilde{\phi}_M$, by: $\tilde{S}_M, \tilde{S}^\star_M, \tilde{L}_M, \tilde{C}_M$ and $\tilde{\hat{S}}_M, {\tilde{\hat{S}}}^\star_M, \tilde{\hat{L}}_M, \tilde{\hat{C}}_M$
  Notice that they no longer work in $L^2(\mathcal{X})$ but in $L^2(\mathcal{X}\times \Xi)$ which is a space of
  stochastic functions.\\
  Since our aim is to compare deterministic functions, we will restrict $L^2(\mathcal{X}\times \Xi)$ to the image of the
@@ -54,7 +59,7 @@
      \E_{\eta'}\left[\tilde{L}_M(f)(x', \eta')\right] & = \int_\Xi \int_{\mathcal{X}\times \Xi}\tilde{k}_M((x, \eta), (x', \eta'))f(x) d(\eta|x)d\rho_{\mathcal{X}}(x)d\eta' \\
                                                       & = L_M(f)(\cdot)
  \end{align*}
- where we used, assuming the measure $d\rho_{\mathcal{X}}$ to be continous, that the diagonal $\{x = x'\}$ has measure zero and that the stochastic kernel converges in expectation
+ where we used, assuming the measure $d\rho_{\mathcal{X}}$ to be continuous, that the diagonal $\{x = x'\}$ has measure zero and that the stochastic kernel converges in expectation
  to the original one \cite{LowPrecisionRFF}.
  Finally we have:
  \begin{align*}
@@ -63,5 +68,20 @@
                                & = \left( \int_{\mathcal{X}} \phi_M(x) \phi_M(x)^T \, d\rho_{\mathcal{X}}(x) \right) w + \left( \int_{\mathcal{X}} D(x) \, d\rho_{\mathcal{X}}(x) \right) w \\
                                & = C_M (w) + \bar{D} w = (C_M + \bar{D}) w
  \end{align*}
- where we used again \cite{LowPrecisionRFF} and $\bar{D} \coloneqq \E_x(D(x))$
+ where we used again \cite{LowPrecisionRFF} and $\bar{D} \coloneqq \E_x(D(x))$.
+
+ \newpage
+ The aim now is to investigate the learning speed of the function recovered through SGD with respect to the theoretical optima in the RKHS: $f_H \coloneqq \argmin_H\Epsilon(f)$ where:
+ $$
+     \Epsilon(f) \coloneqq \int_{\mathcal{X}\times \R}(f(x)-y)^2d\rho(x, y)
+ $$
+ and we learn our function through:
+ $$
+     \tilde{w}_0 = 0, \quad \tilde{w}_{t+1} = \tilde{w}_t - \gamma_t \frac{1}{b} \sum_{i=b(t-1)+1}^{bt} \left( \langle \tilde{w}_t, \tilde{\phi}_M(x_{j_i}, \eta_i) \rangle - y_{j_i} \right) \tilde{\phi}_M(x_{j_i}, \eta_i)
+ $$
+ where $b$ is the dimension of the batch, and $\{j_1, \dots, j_{bT}\}$ is the sampling procedure, done uniformly with replecement on the dataset, for a total of $T$ iterations.
+ \\ Define $\mathcal{F}_t$ as the filtration at time $t$, containing the information on the sampling procedure and the noise terms up to time $t-1$, then:
+ $$
+     \E\left[\tilde{w}_{t+1}|\mathcal{F}_t\right] =
+ $$
 \end{chapter}
