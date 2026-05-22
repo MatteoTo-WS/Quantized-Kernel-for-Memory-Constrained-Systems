@@ -1,27 +1,67 @@
 \begin{chapter}{Main}
  We start by setting the notation we will be using in this work.
- Let $x \in \mathcal{X} \subset \R^d $. As stochastic feature map we consider:
+ Let $x \in \mathcal{X} \subset \R^d $. As stochastic feature map we consider (abusing the notation):
  $$
-     \left\{-\sqrt{\frac{2}{M}}, \sqrt{\frac{2}{M}}\right\}^M \ni \phi_M(x) = \sqrt{\frac{2}{M}}(\cos(\Omega^T x + \xi) + N), \quad \Omega \sim \Lambda^M, \xi \sim Unif[0, 2\pi]^M
+     \tilde{\phi}_M(x, \eta) = \sqrt{\frac{2}{M}}(\cos(\Omega^T x + \xi) + \bar{\eta}) = \phi_M(x) + \eta, \quad \Omega \sim \Lambda^M, \xi \sim Unif[0, 2\pi]^M
  $$
- where the noise term $N$ is a $M$-dimensional random vector with entries such that $N_j$ conditioned on $\omega_j, \xi_j, x$ are independent and:
+ where the noise term $\eta$ is a $M$-dimensional random vector with entries such that $\eta_j$ conditioned on $\omega_j, \xi_j, x$ are independent and:
  $$
-     \mathbb{P}\left(N_j + \cos(\omega_j^T x + \xi_j) = 1\bigg| \omega_j, \xi_j, x \right) = \frac{1+\cos(\omega_j^T x + \xi_j)}{2}
+     \mathbb{P}\left(\bar{\eta_j} + \cos(\omega_j^T x + \xi_j) = 1\bigg| \omega_j, \xi_j, x \right) = \frac{1+\cos(\omega_j^T x + \xi_j)}{2}
  $$
  $$
-     \mathbb{P}\left(N_j + \cos(\omega_j^T x + \xi_j) = -1\bigg| \omega_j, \xi_j, x \right) = \frac{1-\cos(\omega_j^T x + \xi_j)}{2}
+     \mathbb{P}\left(\bar{\eta_j} + \cos(\omega_j^T x + \xi_j) = -1\bigg| \omega_j, \xi_j, x \right) = \frac{1-\cos(\omega_j^T x + \xi_j)}{2}
  $$
- this allows us to use less memory to store the approximated RFFs representation, indeed it is enough to use 1 bit for each dimension $M$.
- \newline From Lemma 3 in \cite{LowPrecisionRFF} we have:
+ Note:
  $$
-     \E_{\substack{N, \Omega, \xi}}(\phi_M(x)^T\phi_M(y)) = k(x,y) + C\delta_x^y, \quad C \in [0,4]
+     \E_{\eta}\left[\bar{\eta_j} + \cos(\omega_j^T x + \xi_j)|\omega_j, \xi_j, x\right] = \cos(\omega^T_j x+\xi_j)
  $$
-
- \noindent Our goal is to give a bound on the learning speed, w.r.t. the square error, for the linear function (in the feature space) $f(x) = \innerprod{\phi(x)}{w_T}$ learned through minibatched SGD algorithm:
+ this allows us to use less memory to store the approximated RFFs representation, indeed it is enough to use 1 bit for each dimension $M$. \\
+ We define some operators: \\
+ To compare the function induced by learned vectors we need the following:
+ \begin{align*}
+      & S_M: \R^M \to L^2(\mathcal{X})                      \\
+      & S_M(w)(\cdot) = \innerprod{w}{\phi_M(\cdot)}_{\R^M}
+ \end{align*}
+ and its adjoint operator:
+ \begin{align*}
+      & S_M^\star: L^2(\mathcal{X}) \to \R^M                                                                \\
+      & S_M^\star(f) = \innerprod{f}{\phi_M}_{L^2(\mathcal{X})}=\int_X f(x)\phi_M(x) d\rho_{\mathcal{X}}(x) \\
+ \end{align*}
+ from these, we derive the operator associated to the kernel induced by $\phi_M$, \\i.e. $L_M \coloneqq S_M \circ S_M^\star$:
+ \begin{align*}
+      & L_M:      &  & L^2(\mathcal{X})  \to L^2(\mathcal{X})                                                                                                                    \\
+      & L_M(f)(x) &  & =\innerprod{\innerprod{f}{\phi_M}_{L^2(\mathcal{X})}}{\phi_M(x)}_{\R^M} = \int_{\mathcal{X}}f(x')\innerprod{\phi_M(x')}{\phi_M(x)}d\rho_{\mathcal{X}}(x') \\
+      & \qquad    &  & = \int_{\mathcal{X}}k_M(x, x')f(x') d\rho_{\mathcal{X}}(x')                                                                                               \\
+ \end{align*}
+ and its adjoint, the covariance operator:
+ \begin{align*}
+      & C_M: \R^M \to \R^M                                                                                                                                              \\
+      & C_M(w) = \innerprod{\innerprod{w}{\phi_M(\cdot)}_{\R^M}}{\phi_M}_{L^2(\mathcal{X})} = \int_{\mathcal{X}}\innerprod{w}{\phi_M(x)}\phi_M(x)d\rho_{\mathcal{X}}(x)
+ \end{align*}
+ We will denote the stochastic operators, i.e. the ones using $\tilde{\phi}_M$, by: $\tilde{S}_M, \tilde{S}_M^\star, \tilde{L}_M \text{ and } \tilde{C}_M$.
+ Notice that they no longer work in $L^2(\mathcal{X})$ but in $L^2(\mathcal{X}\times \Xi)$ which is a space of
+ stochastic functions.\\
+ Since our aim is to compare deterministic functions, we will restrict $L^2(\mathcal{X}\times \Xi)$ to the image of the
+ immersion $i: L^2(\mathcal{X}) \hookrightarrow L^2(\mathcal{X}\times \Xi)$ and work with the expected values of the above operators;
+ under this assumption we have:
+ $$\tilde{S}_M^\star f = \int_\mathcal{X}f(x)\int_\Xi \tilde{\phi}_M(x, \eta)d(\eta|x)d\rho_{\mathcal{X}}(x) =\int_\mathcal{X}f(x)\phi_M(x)d\rho_{\mathcal{X}}(x) = S_M^\star f $$
+ we can further exploit the non-dependecy of $f$ on $\eta$ to get:
  $$
-     \hat{w}_0 = 0, \quad \hat{w}_{t+1} = \hat{w}_t -\gamma_t \frac{1}{b} \sum_{i=(b-1)t+1}^{bt} (\innerprod{\phi_M(x_i)}{\hat{w}_t} - y_i) \phi_M(x_i), \quad t \in [T]
+     \E_{\eta'}\left[\tilde{S}_M(w)(\cdot, \eta')\right] = \innerprod{w}{\E_{\eta'}\left[\tilde{\phi}_M(\cdot,\eta')\right]} =\innerprod{w}{\phi_M(\cdot)} = S_M(w)(\cdot)                                                                \\
  $$
-
-
-
+ and also:
+ \begin{align*}
+     \E_{\eta'}\left[\tilde{L}_M(f)(x', \eta')\right] & = \int_\Xi \int_{\mathcal{X}\times \Xi}\tilde{k}_M((x, \eta), (x', \eta'))f(x) d(\eta|x)d\rho_{\mathcal{X}}(x)d\eta' \\
+                                                      & = L_M(f)(\cdot)
+ \end{align*}
+ where we used, assuming the measure $d\rho_{\mathcal{X}}$ to be continous, that the diagonal $\{x = x'\}$ has measure zero and that the stochastic kernel converges in expectation
+ to the original one \cite{LowPrecisionRFF}.
+ Finally we have:
+ \begin{align*}
+     \E_{\eta}(\tilde{C}_M(w)) & = \int_\Xi \left( \int_{\mathcal{X}} \langle \tilde{\phi}_M(x, \eta), w \rangle \tilde{\phi}_M(x, \eta) \, d\rho_{\mathcal{X}}(x) \right) d\eta            \\
+                               & = \int_{\mathcal{X}} \left( \int_{\Xi} \tilde{\phi}_M(x, \eta) \tilde{\phi}_M(x, \eta)^T \, d\eta \right) w \, d\rho_{\mathcal{X}}(x)                      \\
+                               & = \left( \int_{\mathcal{X}} \phi_M(x) \phi_M(x)^T \, d\rho_{\mathcal{X}}(x) \right) w + \left( \int_{\mathcal{X}} D(x) \, d\rho_{\mathcal{X}}(x) \right) w \\
+                               & = C_M (w) + \bar{D} w = (C_M + \bar{D}) w
+ \end{align*}
+ where we used again \cite{LowPrecisionRFF} and $\bar{D} \coloneqq \E_x(D(x))$
 \end{chapter}
