@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{SGDlearning}
+Luigi Carratino, Alessandro Rudi, and Lorenzo Rosasco.
+\newblock Learning with sgd and random features.
+\newblock {\em arXiv preprint arXiv:1807.06343}, 2018.
+
 \bibitem{LowPrecisionRFF}
 Jian Zhang, Avner May, Tri Dao, and Christopher R{\'{e}}.
 \newblock Low-precision random fourier features for memory-constrained kernel

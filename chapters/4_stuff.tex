@@ -109,7 +109,7 @@
  $$
      \E\left[\tilde{w}_{t+1}\right] = \E_{\mathcal{F}_t}\left[\E\left[\tilde{w}_{t+1}|\mathcal{F}_t\right]\right] = \left(I - \gamma_t (\hat{C}_M + \hat{D}_n)\right)\E\left[\tilde{w}_t\right] + \gamma_t \hat{S}_M^T \mathbf{y}
  $$
- iterating the procedure, and defining: $v_T^q \coloneqq \E\left[\tilde{w}_{t+1}\right]$ and recalling $\tilde{w}_0 = 0$, we get:
+ iterating the procedure, defining: $v_T^q \coloneqq \E\left[\tilde{w}_{t+1}\right]$ and recalling $\tilde{w}_0 = 0$, we get:
  $$
      v_T^q = \sum_{t=0}^{T-1} \gamma_t \left(\prod_{j=t+1}^{T-1} (I - \gamma_j (\hat{C}_M + \hat{D}_n))\right) \hat{S}_M^T \mathbf{y}
  $$
@@ -122,5 +122,24 @@
  $$
      v_T^q = \left(I - (I - \gamma (\hat{C}_M + \hat{D}_n))^T\right) (\hat{C}_M + \hat{D}_n)^{-1} \hat{S}_M^T \mathbf{y}
  $$
-
+ so we can consider the following estimator functions:
+ \begin{align*}
+     f_t^q(x,\eta)        & \coloneqq \langle v_t^q, \tilde{\phi}_M(x, \eta) \rangle_{\R^M} = \tilde{S}_M(v_t^q; x, \eta),         \\
+     \tilde{f}_t(x, \eta) & \coloneqq \innerprod{\tilde{w}_t}{\tilde{\phi}_M(x, \eta)}_{\R^M} = \tilde{S}_M(\tilde{w}_t; x, \eta), \\
+     \hat{f}_t(x)         & \coloneqq \langle \hat{w}_t, \phi_M(x) \rangle_{\R^M} = \hat{S}_M(\hat{w}_t; x)
+ \end{align*}
+ where $\hat{w}_t$ is the vector learned through classical RFFs SGD (see \cite{SGDlearning}).
+ \\ the aim now is to estimate (!aggiungi cit e assunzioni!):
+ $$
+     \mathcal{E}(\tilde{f}_t)-\mathcal{E}(iSf_H) = ||\tilde{f}_t - iSf_H||_{\rho\times d\Q}^2
+ $$
+ where the error is calculated in the product space $\mathcal{X} \times \Gamma$.
+ Our idea is to deal with the following decomposition:
+ $$
+     ||\tilde{f}_t - f_t^q + f_t^q - \hat{f}_t + \hat{f}_t - iSf_H||^2\leq 3||\tilde{f}_t - f_t^q||^2 + 3||f_t^q - \hat{f}_t||^2 + 3||\hat{f}_t - iSf_H||^2
+ $$
 \end{chapter}
+
+
+
+% try to use f_\infty^q invece di \hat{f}_T
