@@ -105,4 +105,22 @@
                                                          & = \left(I - \gamma_t (\hat{C}_M + \hat{D}_n)\right)\tilde{w}_t + \gamma_t \hat{S}_M^T \mathbf{y}
  \end{align*}
  where $\mathbf{y} = \frac{1}{\sqrt{n}}(y_1, \dots, y_n)^T \in \R^n$.
+ Hence:
+ $$
+     \E\left[\tilde{w}_{t+1}\right] = \E_{\mathcal{F}_t}\left[\E\left[\tilde{w}_{t+1}|\mathcal{F}_t\right]\right] = \left(I - \gamma_t (\hat{C}_M + \hat{D}_n)\right)\E\left[\tilde{w}_t\right] + \gamma_t \hat{S}_M^T \mathbf{y}
+ $$
+ iterating the procedure, and defining: $v_T^q \coloneqq \E\left[\tilde{w}_{t+1}\right]$ and recalling $\tilde{w}_0 = 0$, we get:
+ $$
+     v_T^q = \sum_{t=0}^{T-1} \gamma_t \left(\prod_{j=t+1}^{T-1} (I - \gamma_j (\hat{C}_M + \hat{D}_n))\right) \hat{S}_M^T \mathbf{y}
+ $$
+ Assuming constant learning rate $\gamma_t = \gamma$ for all $t$:
+
+ $$
+     v_T^q = \gamma \sum_{t=0}^{T-1} (I - \gamma (\hat{C}_M + \hat{D}_n))^t \hat{S}_M^T \mathbf{y}
+ $$
+ furthermore, since $\hat{D}_n$ is strictly positive definite, we get the invertibility of $(\hat{C}_M + \hat{D}_n)^{-1}$ and:
+ $$
+     v_T^q = \left(I - (I - \gamma (\hat{C}_M + \hat{D}_n))^T\right) (\hat{C}_M + \hat{D}_n)^{-1} \hat{S}_M^T \mathbf{y}
+ $$
+
 \end{chapter}

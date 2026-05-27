@@ -1,17 +1,17 @@
 # Fdb version 4
-["bibtex template-report"] 1779880985.43524 "template-report.aux" "template-report.bbl" "template-report" 1779880988.33004 0
-  "./bibfile.bib" 1779451471 1115 80fa74256b68d862d72fc388111cc04b ""
-  "./chapters/0_preliminaries.aux" 1779880986 2585 a715db4793a57a619b264c7056de8482 ""
-  "./chapters/3_experiments.aux" 1779880987 3337 0ed976b2f354900d081e71f86307c939 ""
-  "./chapters/4_stuff.aux" 1779880987 1741 f040237ac7e1d024edb9cbeb97a65bae ""
-  "./chapters/7_Appendix.aux" 1779880987 1521 154aaf5d2e050813f8e518e1df8e3da2 ""
+["bibtex template-report"] 1779882497.3892 "template-report.aux" "template-report.bbl" "template-report" 1779882598.78901 0
+  "./bibfile.bib" 1779881924 1567 a43fa39a1dcf6b3b34411fa14a3c6259 ""
+  "./chapters/0_preliminaries.aux" 1779882597 2585 a715db4793a57a619b264c7056de8482 ""
+  "./chapters/3_experiments.aux" 1779882597 3337 0ed976b2f354900d081e71f86307c939 ""
+  "./chapters/4_stuff.aux" 1779882597 1741 f040237ac7e1d024edb9cbeb97a65bae ""
+  "./chapters/7_Appendix.aux" 1779882597 1521 154aaf5d2e050813f8e518e1df8e3da2 ""
   "C:/Users/2506b/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "template-report.aux" 1779880987 966 f61062f71ee0c2ce1617e494d37ce001 "pdflatex"
+  "template-report.aux" 1779882597 966 f61062f71ee0c2ce1617e494d37ce001 "pdflatex"
   (generated)
   "template-report.bbl"
   "template-report.blg"
   (rewritten before read)
-["pdflatex"] 1779880985.72708 "c:/Users/2506b/Documents/GitHub/Quantized-Kernel-for-Memory-Constrained-Systems/template-report.tex" "template-report.pdf" "template-report" 1779880988.33184 0
+["pdflatex"] 1779882595.9719 "c:/Users/2506b/Documents/GitHub/Quantized-Kernel-for-Memory-Constrained-Systems/template-report.tex" "template-report.pdf" "template-report" 1779882598.79067 0
   "C:/Users/2506b/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1776802888 82686 2381c3433487640bf26aa76a10db7eb2 ""
   "C:/Users/2506b/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1776774802 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/2506b/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1756138577 13257295 d99860179e4a40140827e2a2d7c2e9b3 ""
@@ -221,13 +221,13 @@
   "C:/Users/2506b/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/2506b/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "c:/Users/2506b/Documents/GitHub/Quantized-Kernel-for-Memory-Constrained-Systems/template-report.tex" 1779869163 5154 42b9df3f1058076e116f6f22ff81e602 ""
-  "chapters/0_preliminaries.aux" 1779880986 2585 a715db4793a57a619b264c7056de8482 "pdflatex"
+  "chapters/0_preliminaries.aux" 1779882597 2585 a715db4793a57a619b264c7056de8482 "pdflatex"
   "chapters/0_preliminaries.tex" 1779291369 16567 3247fb656d2ac61cccb811d86766c6d5 ""
-  "chapters/3_experiments.aux" 1779880987 3337 0ed976b2f354900d081e71f86307c939 "pdflatex"
+  "chapters/3_experiments.aux" 1779882597 3337 0ed976b2f354900d081e71f86307c939 "pdflatex"
   "chapters/3_experiments.tex" 1779289508 1932 4e26cc6aca19013918739bf4f7db227a ""
-  "chapters/4_stuff.aux" 1779880987 1741 f040237ac7e1d024edb9cbeb97a65bae "pdflatex"
-  "chapters/4_stuff.tex" 1779880975 9680 0d1738236055994ac50b8875cbe51462 ""
-  "chapters/7_Appendix.aux" 1779880987 1521 154aaf5d2e050813f8e518e1df8e3da2 "pdflatex"
+  "chapters/4_stuff.aux" 1779882597 1741 f040237ac7e1d024edb9cbeb97a65bae "pdflatex"
+  "chapters/4_stuff.tex" 1779882595 10643 7d9074f1128a0e7d2caf7c346e190f74 ""
+  "chapters/7_Appendix.aux" 1779882597 1521 154aaf5d2e050813f8e518e1df8e3da2 "pdflatex"
   "chapters/7_Appendix.tex" 0 -1 0 ""
   "pics/0-data_overfitting.png" 1776779090 58987 2010d19e18933a9b2586b897693289dc ""
   "pics/Gaussian_Kernel_htm_comparison.png" 1778579319 188630 ab5ebea8f3d9a23ef1353f2d579e720f ""
@@ -236,10 +236,10 @@
   "pics/comparison_diff_approx_matern.png" 1778574914 280746 b5521d6f85230bca440b0dd9e23bb57a ""
   "pics/logo_Ensimag.jpeg" 1776765083 111715 eec7ee4493f358e0278d4ae4b9bc18ae ""
   "pics/logo_IM2AG.jpeg" 1776765083 935982 2d6b9694874f4e333bdfca78ceeb6d00 ""
-  "template-report.aux" 1779880987 966 f61062f71ee0c2ce1617e494d37ce001 "pdflatex"
-  "template-report.bbl" 1779880985 363 547c69ccf8910e54f836567ebc5304fe "bibtex template-report"
+  "template-report.aux" 1779882597 966 f61062f71ee0c2ce1617e494d37ce001 "pdflatex"
+  "template-report.bbl" 1779882497 363 547c69ccf8910e54f836567ebc5304fe "bibtex template-report"
   "template-report.tex" 1779869163 5154 42b9df3f1058076e116f6f22ff81e602 ""
-  "template-report.toc" 1779880987 724 420a77707c46eb58650fe88f373fff14 "pdflatex"
+  "template-report.toc" 1779882597 724 420a77707c46eb58650fe88f373fff14 "pdflatex"
   (generated)
   "chapters/0_preliminaries.aux"
   "chapters/3_experiments.aux"
