@@ -1,87 +1,108 @@
 \begin{chapter}{Main}
  We start by setting the notation we will be using in this work.
- Let $x \in \mathcal{X} \subset \R^d $. As stochastic feature map we consider (abusing the notation):
+ Let $x \in \mathcal{X} \subset \R^d $. As stochastic feature map we consider:
  $$
-     \tilde{\phi}_M(x, \eta) = \sqrt{\frac{2}{M}}(\cos(\Omega^T x + \xi) + \bar{\eta}) = \phi_M(x) + \eta, \quad \Omega \sim \Lambda^M, \xi \sim Unif[0, 2\pi]^M
+     \tilde{\phi}_M(x, \eta) = \sqrt{\frac{2}{M}}(\cos(\Omega^T x + \xi) + \bar{\eta}) = \phi_M(x) + \eta, \quad \Omega \sim \Lambda^M, \xi \sim \text{Unif}[0, 2\pi]^M
  $$
- where the noise term $\eta$ is a $M$-dimensional random vector with entries such that $\eta_j$ conditioned on $\omega_j, \xi_j, x$ are independent and:
+ where the noise term $\eta: \mathcal{X} \times \Gamma \to \R^M$ defines a random field over the probability space $(\Gamma, \mathcal{G}, \Q)$, whose entries $\eta_j$ conditioned on $\omega_j, \xi_j, x$ are independent and satisfy:
  $$
-     \mathbb{P}\left(\bar{\eta}_j + \cos(\omega_j^T x + \xi_j) = 1\bigg| \omega_j, \xi_j, x \right) = \frac{1+\cos(\omega_j^T x + \xi_j)}{2}
+     \Q\left(\bar{\eta}_j + \cos(\omega_j^T x + \xi_j) = 1\bigg| \omega_j, \xi_j, x \right) = \frac{1+\cos(\omega_j^T x + \xi_j)}{2}
  $$
  $$
-     \mathbb{P}\left(\bar{\eta}_j + \cos(\omega_j^T x + \xi_j) = -1\bigg| \omega_j, \xi_j, x \right) = \frac{1-\cos(\omega_j^T x + \xi_j)}{2}
+     \Q\left(\bar{\eta}_j + \cos(\omega_j^T x + \xi_j) = -1\bigg| \omega_j, \xi_j, x \right) = \frac{1-\cos(\omega_j^T x + \xi_j)}{2}
  $$
- Note:
+ from which we can note:
  $$
      \E_{\eta}\left[\bar{\eta}_j + \cos(\omega_j^T x + \xi_j)|\omega_j, \xi_j, x\right] = \cos(\omega^T_j x+\xi_j)
  $$
- this allows us to use less memory to store the approximated RFFs representation, indeed it is enough to use 1 bit for each dimension $M$. \\
- We define some operators: \\
- To compare the function induced by learned vectors we need the following:
+ This design minimizes the memory footprint required to store the approximate RFF representation, as storing each dimension of the quantized map requires only 1 bit. \\
+
+ We define the following standard deterministic operators:
  \begin{align*}
       & S_M: \R^M \to L^2(\mathcal{X})                      \\
       & S_M(w)(\cdot) = \innerprod{w}{\phi_M(\cdot)}_{\R^M}
  \end{align*}
- and its adjoint operator:
+ and its adjoint operator $S_M^\star$:
  \begin{align*}
-      & S_M^\star: L^2(\mathcal{X}) \to \R^M                                                                \\
-      & S_M^\star(f) = \innerprod{f}{\phi_M}_{L^2(\mathcal{X})}=\int_X f(x)\phi_M(x) d\rho_{\mathcal{X}}(x) \\
+      & S_M^\star: L^2(\mathcal{X}) \to \R^M                                                                            \\
+      & S_M^\star(f) = \innerprod{f}{\phi_M}_{L^2(\mathcal{X})}=\int_{\mathcal{X}} f(x)\phi_M(x) d\rho_{\mathcal{X}}(x)
  \end{align*}
- from these, we derive the operator associated to the kernel induced by $\phi_M$, \\i.e. $L_M \coloneqq S_M \circ S_M^\star$:
+ From these, we construct the integral operator $L_M \coloneqq S_M \circ S_M^\star$ associated with the exact kernel $k_M$:
  \begin{align*}
-      & L_M:      &  & L^2(\mathcal{X})  \to L^2(\mathcal{X})                                                                                                                    \\
-      & L_M(f)(x) &  & =\innerprod{\innerprod{f}{\phi_M}_{L^2(\mathcal{X})}}{\phi_M(x)}_{\R^M} = \int_{\mathcal{X}}f(x')\innerprod{\phi_M(x')}{\phi_M(x)}d\rho_{\mathcal{X}}(x') \\
-      & \qquad    &  & = \int_{\mathcal{X}}k_M(x, x')f(x') d\rho_{\mathcal{X}}(x')
+      & L_M:      &  & L^2(\mathcal{X})  \to L^2(\mathcal{X})                                                                                                                            \\
+      & L_M(f)(x) &  & =\innerprod{\innerprod{f}{\phi_M}_{L^2(\mathcal{X})}}{\phi_M(x)}_{\R^M} = \int_{\mathcal{X}}f(x')\innerprod{\phi_M(x')}{\phi_M(x)}_{\R^M} d\rho_{\mathcal{X}}(x') \\
+      & \qquad    &  & = \int_{\mathcal{X}}k_M(x, x') f(x') d\rho_{\mathcal{X}}(x')
  \end{align*}
- and its adjoint, the covariance operator:
+ and the corresponding finite-dimensional covariance operator $C_M \coloneqq S_M^\star \circ S_M$:
  \begin{align*}
-      & C_M: \R^M \to \R^M                                                                                                                                              \\
-      & C_M(w) = \innerprod{\innerprod{w}{\phi_M(\cdot)}_{\R^M}}{\phi_M}_{L^2(\mathcal{X})} = \int_{\mathcal{X}}\innerprod{w}{\phi_M(x)}\phi_M(x)d\rho_{\mathcal{X}}(x)
+      & C_M: \R^M \to \R^M                                                                                                                                                     \\
+      & C_M(w) = \innerprod{\innerprod{w}{\phi_M(\cdot)}_{\R^M}}{\phi_M}_{L^2(\mathcal{X})} = \int_{\mathcal{X}}\innerprod{w}{\phi_M(x)}_{\R^M}\phi_M(x)d\rho_{\mathcal{X}}(x)
  \end{align*}
- In the learning procedure we will also consider the empirical versions of these operators, defined as follows:
+
+ In the learning procedure we will also consider the empirical versions of these operators, defined as follows over a dataset $(x_i)_{i=1}^n$:
  \begin{align*}
-      & \hat{S}_M: \R^M \to \R^n, \quad \hat{S}_M^T(w) = \frac{1}{\sqrt{n}}(\phi_M(x_1), \dots, \phi_M(x_n)) \\
+      & \hat{S}_M: \R^M \to \R^n, \quad \hat{S}_M^T w = \frac{1}{\sqrt{n}}(\phi_M(x_1), \dots, \phi_M(x_n)) w \\
       & \hat{L}_M \coloneqq \hat{S}_M \hat{S}_M^T, \; \hat{C}_M \coloneqq \hat{S}_M^T \hat{S}_M
  \end{align*}
- We will denote the stochastic operators, i.e. the ones using $\tilde{\phi}_M$, by: $\tilde{S}_M, \tilde{S}^\star_M, \tilde{L}_M, \tilde{C}_M$ and $\tilde{\hat{S}}_M, {\tilde{\hat{S}}}^\star_M, \tilde{\hat{L}}_M, \tilde{\hat{C}}_M$
- Notice that they no longer work in $L^2(\mathcal{X})$ but in $L^2(\mathcal{X}\times \Xi)$ which is a space of
- stochastic functions.\\
- Since our aim is to compare deterministic functions, we will restrict $L^2(\mathcal{X}\times \Xi)$ to the image of the
- immersion $i: L^2(\mathcal{X}) \hookrightarrow L^2(\mathcal{X}\times \Xi)$ and work with the expected values of the above operators;
- under this assumption we have:
- $$\tilde{S}_M^\star f = \int_\mathcal{X}f(x)\int_\Xi \tilde{\phi}_M(x, \eta)d(\eta|x)d\rho_{\mathcal{X}}(x) =\int_\mathcal{X}f(x)\phi_M(x)d\rho_{\mathcal{X}}(x) = S_M^\star f $$
- we can further exploit the non-dependecy of $f$ on $\eta$ to get:
+ We will denote the stochastic operators, i.e. the ones using $\tilde{\phi}_M$, by: $\tilde{S}_M, \tilde{S}^\star_M, \tilde{L}_M, \tilde{C}_M$ and $\tilde{\hat{S}}_M, {\tilde{\hat{S}}}^\star_M, \tilde{\hat{L}}_M, \tilde{\hat{C}}_M$. \\
+ Notice that they no longer work in $L^2(\mathcal{X})$ but in $L^2(\mathcal{X}\times \Gamma, \rho_{\mathcal{X}} \otimes \Q)$ which is a space of stochastic functions.\\
+ Since our aim is to compare deterministic functions, we will restrict $L^2(\mathcal{X}\times \Gamma)$ to the image of the immersion $i: L^2(\mathcal{X}) \hookrightarrow L^2(\mathcal{X}\times \Gamma)$ and work with the expected values of the above operators; under this assumption we have:
+ $$\tilde{S}_M^\star i(f) = \int_{\mathcal{X}}f(x)\int_\Gamma \tilde{\phi}_M(x, \eta)d\Q(\eta|x)d\rho_{\mathcal{X}}(x) =\int_{\mathcal{X}}f(x)\phi_M(x)d\rho_{\mathcal{X}}(x) = S_M^\star f $$
+ we can further exploit the non-dependency of $w$ on $\eta'$ to get:
  $$
-     \E_{\eta'}\left[\tilde{S}_M(w)(\cdot, \eta')\right] = \innerprod{w}{\E_{\eta'}\left[\tilde{\phi}_M(\cdot,\eta')\right]} =\innerprod{w}{\phi_M(\cdot)} = S_M(w)(\cdot)                                                                \\
+     \E_{\eta'}\left[\tilde{S}_M(w)(\cdot, \eta')\right] = \innerprod{w}{\E_{\eta'}\left[\tilde{\phi}_M(\cdot,\eta')\right]}_{\R^M} =\innerprod{w}{\phi_M(\cdot)}_{\R^M} = S_M(w)(\cdot)                                                                \\
  $$
  and also:
  \begin{align*}
-     \E_{\eta'}\left[\tilde{L}_M(f)(x', \eta')\right] & = \int_\Xi \int_{\mathcal{X}\times \Xi}\tilde{k}_M((x, \eta), (x', \eta'))f(x) d(\eta|x)d\rho_{\mathcal{X}}(x)d\eta' \\
-                                                      & = L_M(f)(\cdot)
+     \E_{\eta'}\left[\tilde{L}_M(i(f))(x', \eta')\right] & = \int_\Gamma \int_{\mathcal{X}\times \Gamma}\tilde{k}_M((x, \eta), (x', \eta'))f(x) d\Q(\eta|x)d\rho_{\mathcal{X}}(x)d\Q(\eta') \\
+                                                         & = L_M(f)(x')
  \end{align*}
- where we used, assuming the measure $d\rho_{\mathcal{X}}$ to be continuous, that the diagonal $\{x = x'\}$ has measure zero and that the stochastic kernel converges in expectation
- to the original one \cite{LowPrecisionRFF}.
- Finally we have:
+ where we used, assuming the measure $d\rho_{\mathcal{X}}$ to be continuous, that the diagonal $\{x = x'\}$ has measure zero and that the stochastic kernel converges in expectation to the original one \cite{zhang2019low}. Finally we have:
  \begin{align*}
-     \E_{\eta}(\tilde{C}_M(w)) & = \int_\Xi \left( \int_{\mathcal{X}} \langle \tilde{\phi}_M(x, \eta), w \rangle \tilde{\phi}_M(x, \eta) \, d\rho_{\mathcal{X}}(x) \right) d\eta            \\
-                               & = \int_{\mathcal{X}} \left( \int_{\Xi} \tilde{\phi}_M(x, \eta) \tilde{\phi}_M(x, \eta)^T \, d\eta \right) w \, d\rho_{\mathcal{X}}(x)                      \\
-                               & = \left( \int_{\mathcal{X}} \phi_M(x) \phi_M(x)^T \, d\rho_{\mathcal{X}}(x) \right) w + \left( \int_{\mathcal{X}} D(x) \, d\rho_{\mathcal{X}}(x) \right) w \\
+     \E_{\eta}(\tilde{C}_M(w)) & = \int_\Gamma \left( \int_{\mathcal{X}} \langle \tilde{\phi}_M(x, \eta), w \rangle_{\R^M} \tilde{\phi}_M(x, \eta) \, d\rho_{\mathcal{X}}(x) \right) d\Q(\eta) \\
+                               & = \int_{\mathcal{X}} \left( \int_{\Gamma} \tilde{\phi}_M(x, \eta) \tilde{\phi}_M(x, \eta)^T \, d\Q(\eta) \right) w \, d\rho_{\mathcal{X}}(x)                  \\
+                               & = \left( \int_{\mathcal{X}} \phi_M(x) \phi_M(x)^T \, d\rho_{\mathcal{X}}(x) \right) w + \left( \int_{\mathcal{X}} D(x) \, d\rho_{\mathcal{X}}(x) \right) w    \\
                                & = C_M (w) + \bar{D} w = (C_M + \bar{D}) w
  \end{align*}
  where we used again \cite{LowPrecisionRFF} and $\bar{D} \coloneqq \E_x(D(x))$.
+ \\ Moving now to the empirical counterpart, let $\eta_i(\cdot) \coloneqq \eta(x_i, \cdot)$ denote the quantization noise vector realized at the $i$-th sample. We have:
+ $$
+     \E_{\eta_i}(\tilde{\phi}_M(x_i, \eta_i)) = \phi_M(x_i) \Rightarrow \E_\eta(\tilde{\hat{S}}_M) = \hat{S}_M
+ $$
+ For the empirical covariance matrix, the noise expands quadratically:
+ \begin{align*}
+     \mathbb{E}_\eta[\tilde{\hat{C}}_M] & = \frac{1}{n} \sum_{i=1}^n \mathbb{E}_{\eta_i}\left[ \tilde{\phi}_M(x_i, \eta_i) \tilde{\phi}_M(x_i, \eta_i)^T \right] \\
+                                        & = \frac{1}{n} \sum_{i=1}^n \left( \phi_M(x_i)\phi_M(x_i)^T + D(x_i) \right) = \hat{C}_M + \hat{D}_n
+ \end{align*}
+ where $\hat{D}_n = \frac{1}{n}\sum_{i=1}^n D(x_i)$. Analogously, for the kernel matrix elements $(\tilde{\hat{L}}_M)_{i,j}$:
+ \begin{align*}
+     \E_\eta\left[(\tilde{\hat{L}}_M)_{i,j}\right] & = \frac{1}{n} \phi_M(x_i)^T \phi_M(x_j) + \frac{\delta_i^j}{n}\E_{\eta_i}\left[\eta_i^T\eta_i\right] \\
+                                                   & =(\hat{L}_M)_{i,j}+\frac{\delta_i^j}{n}\E_{\eta_i}\left[\text{Tr}(\eta_i\eta_i^T)\right]             \\
+                                                   & =(\hat{L}_M)_{i,j}+\frac{\delta_i^j}{n}\text{Tr}(D(x_i))                                             \\
+ \end{align*}
+ hence:
+ $$
+     \E_\eta\left[\tilde{\hat{L}}_M\right] = \hat{L}_M + \hat{\Delta}_L
+ $$
+ where $\hat{\Delta}_L \coloneqq \text{diag}\left(\frac{\text{Tr}(D(x_1))}{n}, \dots, \frac{\text{Tr}(D(x_n))}{n}\right)$.
 
  \newpage
- The aim now is to investigate the learning speed of the function recovered through SGD with respect to the theoretical optima in the RKHS: $f_H \coloneqq \argmin_H\Epsilon(f)$ where:
+ The aim now is to investigate the learning speed of the function recovered through SGD with respect to the theoretical optima in the RKHS: $f_{\mathcal{H}} \coloneqq \operatorname{arg\,min}_{f \in \mathcal{H}}\mathcal{E}(f)$ where:
  $$
-     \Epsilon(f) \coloneqq \int_{\mathcal{X}\times \R}(f(x)-y)^2d\rho(x, y)
+     \mathcal{E}(f) \coloneqq \int_{\mathcal{X}\times \R}(f(x)-y)^2d\rho(x, y)
  $$
- and we learn our function through:
+ and we learn our function through Mini-batch SGD:
  $$
-     \tilde{w}_0 = 0, \quad \tilde{w}_{t+1} = \tilde{w}_t - \gamma_t \frac{1}{b} \sum_{i=b(t-1)+1}^{bt} \left( \langle \tilde{w}_t, \tilde{\phi}_M(x_{j_i}, \eta_i) \rangle - y_{j_i} \right) \tilde{\phi}_M(x_{j_i}, \eta_i)
+     \tilde{w}_0 = 0, \quad \tilde{w}_{t+1} = \tilde{w}_t - \gamma_t \frac{1}{b} \sum_{i=b(t-1)+1}^{bt} \left( \langle \tilde{w}_t, \tilde{\phi}_M(x_{j_i}, \eta_i) \rangle_{\R^M} - y_{j_i} \right) \tilde{\phi}_M(x_{j_i}, \eta_i)
  $$
- where $b$ is the dimension of the batch, and $\{j_1, \dots, j_{bT}\}$ is the sampling procedure, done uniformly with replecement on the dataset, for a total of $T$ iterations.
- \\ Define $\mathcal{F}_t$ as the filtration at time $t$, containing the information on the sampling procedure and the noise terms up to time $t-1$, then:
- $$
-     \E\left[\tilde{w}_{t+1}|\mathcal{F}_t\right] =
- $$
+ where $b$ is the dimension of the batch, and $\{j_1, \dots, j_{bT}\}$ is the sampling sequence drawn uniformly with replacement from the full dataset $\{1, \dots, n\}$. \\
+
+ Define $\mathcal{F}_t$ as the filtration containing all information up to step $t-1$, which corresponds to indices processed up to $b(t-1)$. Since $\tilde{w}_t$ is $\mathcal{F}_t$-measurable, and the new data indices $j_i$ along with their respective quantization noise vectors $\eta_i$ at step $t$ are independent of $\mathcal{F}_t$, taking the conditional expectation yields:
+ \begin{align*}
+     \E\left[\tilde{w}_{t+1}\middle|\mathcal{F}_t\right] & = \tilde{w}_t - \gamma_t \frac{1}{b} \sum_{i=b(t-1)+1}^{bt} \E_{j_i, \eta_i} \left[ \tilde{\phi}_M(x_{j_i}, \eta_i)\tilde{\phi}_M(x_{j_i}, \eta_i)^T \tilde{w}_t - y_{j_i}\tilde{\phi}_M(x_{j_i}, \eta_i) \;\middle|\; \mathcal{F}_t \right] \\
+                                                         & = \tilde{w}_t - \gamma_t \frac{1}{b} \sum_{i=b(t-1)+1}^{bt} \E_{j_i} \left[ \left( \phi_M(x_{j_i})\phi_M(x_{j_i})^T + D(x_{j_i}) \right) \tilde{w}_t - y_{j_i}\phi_M(x_{j_i}) \right]                                                        \\
+                                                         & = \tilde{w}_t - \gamma_t \frac{1}{b} \sum_{i=b(t-1)+1}^{bt} \left( \left(\hat{C}_M + \hat{D}_n\right) \tilde{w}_t - \hat{S}_M^T \mathbf{y} \right)                                                                                           \\
+                                                         & = \left(I - \gamma_t (\hat{C}_M + \hat{D}_n)\right)\tilde{w}_t + \gamma_t \hat{S}_M^T \mathbf{y}
+ \end{align*}
+ where $\mathbf{y} = \frac{1}{\sqrt{n}}(y_1, \dots, y_n)^T \in \R^n$.
 \end{chapter}

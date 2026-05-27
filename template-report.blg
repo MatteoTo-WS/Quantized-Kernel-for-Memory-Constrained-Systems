@@ -13,9 +13,10 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 Database file #1: bibfile.bib
+Warning--I didn't find a database entry for "zhang2019low"
 You've used 1 entry,
             2118 wiz_defined-function locations,
-            508 strings with 4385 characters,
+            509 strings with 4397 characters,
 and the built_in function-call counts, 571 in all, are:
 = -- 56
 > -- 23
@@ -54,3 +55,4 @@ warning$ -- 0
 while$ -- 5
 width$ -- 2
 write$ -- 13
+(There was 1 warning)
