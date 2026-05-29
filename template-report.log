@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.25)  27 MAY 2026 18:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.25)  28 MAY 2026 15:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -986,4 +986,184 @@ LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 3.
- (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/psnf
+ (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3.
+ (C:\Users\2506b\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+)
+
+[3]
+
+[4
+
+]
+\openout2 = `./chapters/0_preliminaries.aux'.
+
+ (chapters/0_preliminaries.tex
+Chapter 0.
+<pics/0-data_overfitting.png, id=53, 619.3539pt x 383.031pt>
+File: pics/0-data_overfitting.png Graphic file (type png)
+<use pics/0-data_overfitting.png>
+Package pdftex.def Info: pics/0-data_overfitting.png  used on input line 22.
+(pdftex.def)             Requested size: 334.60422pt x 206.93301pt.
+
+
+[1
+
+
+]
+
+[2 <./pics/0-data_overfitting.png>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+
+
+[3]
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
+
+ []
+
+
+
+[5]
+
+[6])
+
+[7]
+\openout2 = `./chapters/3_experiments.aux'.
+
+ (chapters/3_experiments.tex
+
+[8
+
+
+
+
+]
+Chapter 1.
+<pics/comparison_diff_approx_gaussian.png, id=91, 1182.3372pt x 682.2288pt>
+File: pics/comparison_diff_approx_gaussian.png Graphic file (type png)
+<use pics/comparison_diff_approx_gaussian.png>
+Package pdftex.def Info: pics/comparison_diff_approx_gaussian.png  used on input line 20.
+(pdftex.def)             Requested size: 418.25368pt x 241.33409pt.
+<pics/comparison_diff_approx_matern.png, id=92, 1178.7237pt x 682.2288pt>
+File: pics/comparison_diff_approx_matern.png Graphic file (type png)
+<use pics/comparison_diff_approx_matern.png>
+Package pdftex.def Info: pics/comparison_diff_approx_matern.png  used on input line 30.
+(pdftex.def)             Requested size: 418.25368pt x 242.0732pt.
+<pics/Gaussian_Kernel_htm_comparison.png, id=93, 1264.725pt x 498.663pt>
+File: pics/Gaussian_Kernel_htm_comparison.png Graphic file (type png)
+<use pics/Gaussian_Kernel_htm_comparison.png>
+Package pdftex.def Info: pics/Gaussian_Kernel_htm_comparison.png  used on input line 38.
+(pdftex.def)             Requested size: 418.25368pt x 164.9093pt.
+<pics/Matern_Kernel_htm_comparison.png, id=94, 1264.725pt x 498.663pt>
+File: pics/Matern_Kernel_htm_comparison.png Graphic file (type png)
+<use pics/Matern_Kernel_htm_comparison.png>
+Package pdftex.def Info: pics/Matern_Kernel_htm_comparison.png  used on input line 45.
+(pdftex.def)             Requested size: 418.25368pt x 164.9093pt.
+)
+
+[9]
+
+[10 <./pics/comparison_diff_approx_gaussian.png> <./pics/comparison_diff_approx_matern.png>]
+
+[11 <./pics/Gaussian_Kernel_htm_comparison.png> <./pics/Matern_Kernel_htm_comparison.png>]
+\openout2 = `./chapters/4_stuff.aux'.
+
+ (chapters/4_stuff.tex
+
+[12
+
+
+
+
+]
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--19
+
+ []
+
+
+
+[13]
+
+LaTeX Warning: Citation `zhang2019low' on page 14 undefined on input line 60.
+
+
+
+[14]
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+
+ []
+
+
+
+[16])
+
+[17]
+\openout2 = `./chapters/7_Appendix.aux'.
+
+
+No file ./chapters/7_Appendix.tex.
+
+
+[18
+
+
+
+
+
+
+] (template-report.bbl
+bibitemlist
+)
+
+[19
+
+]
+\tf@toc=\write5
+\openout5 = `template-report.toc'.
+
+ (template-report.aux (chapters/0_preliminaries.aux) (chapters/3_experiments.aux) (chapters/4_stuff.aux) (chapters/7_Appendix.aux))
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2020/03/25>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 24317 strings out of 468134
+ 495479 string characters out of 5430740
+ 1028479 words of memory out of 5000000
+ 52409 multiletter control sequences out of 15000+600000
+ 711639 words of font info for 155 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 85i,14n,93p,634b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/2506b/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on template-report.pdf (25 pages, 2076095 bytes).
+PDF statistics:
+ 189 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
+
