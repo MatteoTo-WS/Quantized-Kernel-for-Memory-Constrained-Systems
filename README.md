@@ -21,10 +21,12 @@ Building on Carratino, Rudi & Rosasco (2018), the excess risk of the quantized e
 
 $$
 \mathbb{E}_{J,\gamma}\|f^q_T - f_{\mathcal H}\|^2_{L^2(\rho_X)}
-\;\lesssim\; \underbrace{\sigma^2_{\mathcal H}\,\Xi_T}_{\asymp\, \mu\log T/b}
-+ \underbrace{\tfrac{U^2}{M^2}\,\Theta_T^2}_{\asymp\, \mu T/M^2}
-+ \mathbb{E}_J\|f_T - f_{\mathcal H}\|^2_{L^2(\rho_X)} .
+\;\lesssim\; \sigma^2_{\mathcal H}\,\Xi_T
++ \frac{U^2}{M^2}\,\Theta_T^2
++ \mathbb{E}_J\|f_T - f_{\mathcal H}\|^2_{L^2(\rho_X)} ,
 $$
+
+where the variance term is of order $\mu \log T / b$ and the bias term of order $\mu T / M^2$.
 
 With $\mu T \asymp \sqrt n$ and $M = \tilde O(\sqrt n)$, this gives $\tilde O(n^{-1/2})$: one bit per coordinate preserves the minimax rate (Caponnetto & De Vito, 2007) **with the same number of features as full precision**. The bound relies on a spectral assumption on the mini-batch operators, verified in the population case and left open in general.
 
