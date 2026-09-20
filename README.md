@@ -20,7 +20,7 @@ Rounding perturbs the covariance operator by a diagonal term, $C^q_M = C_M + \ba
 Building on Carratino, Rudi & Rosasco (2018), the excess risk of the quantized estimator satisfies
 
 $$
-\mathbb{E}_{J,\gamma}\|f^q_T - f_{\mathcal H}\|^2_{L^2(\rho_X)}
+\mathbb{E}_{J,\gamma}\|f^q_T - f _{\mathcal H}\|^2_{L^2(\rho_X)}
 \;\lesssim\; \sigma^2_{\mathcal H}\,\Xi_T
 + \frac{U^2}{M^2}\,\Theta_T^2
 + \mathbb{E}_J\|f_T - f_{\mathcal H}\|^2_{L^2(\rho_X)} ,
