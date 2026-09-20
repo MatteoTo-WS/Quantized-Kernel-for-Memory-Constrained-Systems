@@ -8,23 +8,23 @@ Research carried out at GIPSA-Lab under the supervision of Antoine Chatalic and 
 
 Random Fourier features (RFFs) reduce kernel methods from $O(n^2)$ memory to $O(nM)$, but storing $nM$ floats can still be too much on memory-constrained systems. This work studies least-squares regression solved by mini-batch SGD on RFFs **stochastically rounded to one bit per coordinate**:
 
-$$
-\varphi^q_M(x,\gamma)_j = \pm\sqrt{2/M} \quad \text{w.p. } \tfrac12\big(1 \pm \cos(\omega_j^\top x + \xi_j)\big),
-\qquad \mathbb{E}_\gamma[\varphi^q_M(x,\gamma)] = \varphi_M(x).
-$$
+```math
+\varphi^q_M(x,\gamma)_j = \pm\sqrt{2/M} \quad \text{w.p. } \tfrac{1}{2}\big(1 \pm \cos(\omega_j^\top x + \xi_j)\big),
+\qquad \mathbb{E}_\gamma[\varphi^q_M(x,\gamma)] = \varphi_M(x)
+```
 
-Rounding perturbs the covariance operator by a diagonal term, $C^q_M = C_M + \bar D$ with $\|\bar D\|_{op} \le 2/M$, which is propagated through the SGD recursion.
+Rounding perturbs the covariance operator by a diagonal term, $C^q_M = C_M + \bar D$ with $\Vert\bar D\Vert_{op} \le 2/M$, which is propagated through the SGD recursion.
 
 ## Main result
 
 Building on Carratino, Rudi & Rosasco (2018), the excess risk of the quantized estimator satisfies
 
-\begin{equation}
-\mathbb{E}_{J,\gamma}\|f^q_T - f_{\mathcal H}\|^2_{L^2(\rho_X)}
-\;\lesssim\; \sigma^2_{\mathcal H}\,\Xi_T
-+ \frac{U^2}{M^2}\,\Theta_T^2
-+ \mathbb{E}_J\|f_T - f_{\mathcal H}\|^2_{L^2(\rho_X)} ,
-\end{equation}
+```math
+\mathbb{E}_{J,\gamma} \Vert f^q_T - f_{\mathcal H} \Vert^2_{L^2(\rho_X)}
+\lesssim \sigma^2_{\mathcal H} \Xi_T
++ \frac{U^2}{M^2} \Theta_T^2
++ \mathbb{E}_J \Vert f_T - f_{\mathcal H} \Vert^2_{L^2(\rho_X)}
+```
 
 where the variance term is of order $\mu \log T / b$ and the bias term of order $\mu T / M^2$.
 
